@@ -39,9 +39,7 @@ function Nav() {
 
         {/* Navigation Links */}
         <div
-          className={`lg:flex space-x-6 text-lg ${
-            isMenuOpen ? "hidden" : "hidden"
-          } lg:block`}
+          className={`hidden lg:flex space-x-6 text-lglg:block`}
         >
           <NavLink
             to="/"
