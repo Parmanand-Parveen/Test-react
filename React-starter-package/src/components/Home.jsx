@@ -31,29 +31,35 @@ function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="flex justify-between items-center mb-6">
-        <button
-          onClick={handlePreviousPage}
-          disabled={count === 1}
-          className={`px-4 py-2 rounded-md ${
-            count === 1
-              ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-              : "bg-blue-500 text-white hover:bg-blue-600 transition"
-          }`}
-        >
-          Previous Page
-        </button>
-        <p className="text-lg font-semibold">
-          Page: <span className="text-blue-500">{count}</span>
-        </p>
-        <button
-          onClick={handleNextPage}
-          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
-        >
-          Next Page
-        </button>
-      </div>
+    <div className="min-h-screen bg-gray-50 p-4 lg:p-8">
+    <div className="flex gap-3 justify-between items-center mb-6  ">
+  {/* Previous Button */}
+  <button
+    onClick={handlePreviousPage}
+    disabled={count === 1}
+    className={`px-4 py-2 rounded-md min-w-max  text-xs md:text-lg  ${
+      count === 1
+        ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+        : "bg-blue-500 text-white hover:bg-blue-600 transition"
+    }`}
+  >
+    Previous Page
+  </button>
+
+  {/* Page Number */}
+  <p className="lg:text-lg text-base font-semibold  md:my-4  my-0">
+    Page: <span className="text-blue-500">{count}</span>
+  </p>
+
+  {/* Next Button */}
+  <button
+    onClick={handleNextPage}
+    className="px-4 py-2 text-xs md:text-lg bg-blue-500 text-white rounded-md hover:bg-blue-600 transition min-w-max  "
+  >
+    Next Page
+  </button>
+</div>
+
       {images.loading ? (
         <h1 className="justify-center items-center gap-3  text-2xl flex font-semibold text-gray-700">
          Loading <GiSpinningBlades className="animate-spin"/>
